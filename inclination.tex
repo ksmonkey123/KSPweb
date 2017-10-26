@@ -3,7 +3,6 @@
 \usepackage[absolute]{textpos}
 \usepackage[english]{babel}
 \usepackage[left=2cm, right=2cm, top=2cm, bottom=2.5cm]{geometry}
-%\usepackage{hyperref}
 \usepackage{float}
 \usepackage{caption}
 \usepackage{graphicx}
@@ -46,15 +45,15 @@ $$
 For the inclination change manoeuvre we must consider the problem geometrically: An inclination change by an angle $\theta \in [0,\pi]$ simply rotates the velocity vector by that angle $\theta$. Assuming $\vec{a}$ to be the initial velocity vector and $\vec{b}$ with $|\vec{b}| = |\vec{a}|$, where the angle between $\vec{a}$ and $\vec{b}$ is $\theta$, the target velocity vector, the change in velocity required is $\Delta{}v_2 = |\vec{b} - \vec{a}|$. The vectors $\vec{a}$ and $\vec{b}$ form the legs of an isosceles triangle with the \emph{vertex angle} $\theta$.
 The length $|\vec{a}|$ of the vector $\vec{a}$ corresponds to the orbital velocity at the point of the manoeuvre. Since we only consider inclination changes at the apoapsis, $|\vec{a}| = v_{(r,fr)}(fr)$. $\Delta{}v_2$ forms the base of this triangle and can be calculated as
 $$\Delta{}v_2
-= 2|\vec{a}|\sin\frac{\alpha}2
-= 2\sqrt{  \mu \left(  \frac{2}{fr} - \frac{2}{fr + r}  \right) } \sin\frac{\alpha}2
-= \sqrt{\frac{4\mu}r} \sqrt{\frac{2}{f^2+f}} \sin\frac{\alpha}2
+= 2|\vec{a}|\sin\frac{\theta}2
+= 2\sqrt{  \mu \left(  \frac{2}{fr} - \frac{2}{fr + r}  \right) } \sin\frac{\theta}2
+= \sqrt{\frac{4\mu}r} \sqrt{\frac{2}{f^2+f}} \sin\frac{\theta}2
 $$
 
 We can now combine all the above and formulate the total energy requirements for a bi-elliptic transfer
 $$\Delta{}v_{tot}
 = 2\Delta{}v_1 + \Delta{}v_2
-= \sqrt{\frac{4\mu}r}\left( \sqrt{\frac{2f}{f+1}} - 1  \right) + \sqrt{\frac{4\mu}r} \sqrt{\frac{2}{f^2+f}} \sin\frac{\alpha}2$$
+= \sqrt{\frac{4\mu}r}\left( \sqrt{\frac{2f}{f+1}} - 1  \right) + \sqrt{\frac{4\mu}r} \sqrt{\frac{2}{f^2+f}} \sin\frac{\theta}2$$
 
 With some simplifications we get
 $$\Delta{}v_{tot}= \sqrt{\frac{4\mu}r}\left[ \sqrt{\frac{2}{f^2 + f}} \left(f + \sin\frac{\theta}2 \right) - 1  \right]$$
@@ -63,7 +62,6 @@ $$\Delta{}v_{tot}= \sqrt{\frac{4\mu}r}\left[ \sqrt{\frac{2}{f^2 + f}} \left(f + 
 Finding the optimal transfer manoeuvre can be done by minimising $\Delta{}v_{tot}$ for a given $\theta$. If we are able to determine the derivative of $\Delta v_{tot}$ we can determine the optimal scaling factor $f$ by finding the roots of that derivative.
 
 $$\frac{\partial}{\partial f}\Delta v_{tot}
-%= \sqrt\frac{8\mu}{r} \frac{\partial}{\partial f}\left[ \sqrt{\frac{1}{f^2+f}} \left( f + \sin\frac{\theta}{2} \right)\right]
 = \sqrt\frac{8\mu}{r} \left[ \sqrt{\frac{1}{f^2+f}} \left(1- \frac{2f^2+f+2f\sin\frac\theta 2 + \sin\frac\theta 2}{2f^2+2f} \right)\right]
 $$
 
